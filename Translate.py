@@ -27,7 +27,7 @@ TRANS_IDX = {'think': ['thought'],
              'ingsoc':['english socialism'],
              'BB':['big brother'],
              'thoughtcrime':['honor', 'justice', 'free', 'morality', 'internationalism', 'freedom'],
-             'oldthink':['democracy', 'religon', 'science', 'god', 'liberty', 'equality', 'noble', 'nobility'],
+             'oldthink':['democracy', 'religon', 'science', 'god', 'liberty', 'equality'],
              'goodsex':['chastity'],
              'sexcrime':['adultery', 'reproduction', 'intercourse', 'sex', 'homosexual'],
              'prolefeed':['entertainment'],
@@ -43,7 +43,7 @@ TRANS_IDX = {'think': ['thought'],
              '-':['a ', 'an ', 'the', 'in ', ]}
 
 
-PUNCTUATION = [' ', '.', '!', '?', ',', '\n', ';', '']
+PUNCTUATION = [' ', '.', '!', '?', ',', '\n', ';']
              
 
 class Translator:
@@ -71,6 +71,8 @@ class Translator:
         sizes =  self.NS_DICT_BY_SIZE.keys()
         sizes.sort()
         sizes.reverse()
+
+        print sizes
 
         for s in sizes:
             ACTIVE_NS_DICT = self.NS_DICT_BY_SIZE[s]
@@ -102,11 +104,6 @@ These extremely positive messages denouncing the party will surely be read by th
 The weather is very sunny today. 
 """
     translator = Translator()
-    #output = translator.translateSentence(exampletext)
-    #print "%s \n \n%s" %(exampletext, output)
-
-    while True:
-        a = raw_input(":")
-        output = translator.translateSentence(a)
-        print output + '\n'
+    output = translator.translateSentence(exampletext)
+    print "%s \n \n%s" %(exampletext, output)
 
